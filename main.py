@@ -17,6 +17,6 @@ for key,value in cloud_data.items():
     else:
         output_text += f"{class_cloud_rule.apply_135_no_cb(value)}\n"
 
-with open("Corrected_Synop_135_Rule.txt","w") as data:
+with open("Corrected_Synop_135_Rule.txt", "w") as data:
     data.write(output_text)
 
