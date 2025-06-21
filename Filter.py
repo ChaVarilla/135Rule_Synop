@@ -21,7 +21,7 @@ class Filters:
         with open(self.text_file) as data:
             for line in data:
                 if str(line[0:5]) in self.SYNOPTIC_STATIONS:
-                    synop_split = re.split(r'[=;RHTsrS]',line)
+                    synop_split = re.split(r'[=;RHTtsrS]',line)
                     synop_data = synop_split[0]
                     observations.append(synop_data)
 
