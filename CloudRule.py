@@ -4,7 +4,7 @@ class CloudRule:
     @staticmethod
     def is_with_cb(station_cloud):
 
-        if station_cloud["cloud_group"][2] == "9":
+        if station_cloud["cloud_group"][2] == "9" or station_cloud["cloud_group"][2] == "3" :
             return True
         else:
             return False
@@ -33,6 +33,9 @@ class CloudRule:
 
             else:
                 return f"{layers["synop"]}="
+
+        elif len(all_layers) == 4:
+            return f"{layers["synop"]}= Cloud layers should not exceed three when there's no Cb"
 
 
     @staticmethod
@@ -85,7 +88,7 @@ class CloudRule:
 
 
                 if amount_third_layer < 3 or amount_fourth_layer < 5 :
-                    return f"{layers["synop"]}= Cloud amount does not follow 135 Rule.\n"
+                    return f"{layers["synop"]}= Cloud amount does not follow 135 Rule."
 
                 else:
-                    return f"{layers["synop"]}=\n"
+                    return f"{layers["synop"]}="
